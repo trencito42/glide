@@ -1,0 +1,13 @@
+node_modules/
+dist/
+target/
+gen/
+.DS_Store
+*.log
+docs/evidence/
+!docs/evidence/.gitkeep
+apps/sable/src-tauri/target/
+apps/sable/src-tauri/gen/
+third_party/
+vendor/b4/node_modules/
+vendor/b4/packages/*/dist/

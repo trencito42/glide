@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-new-space"
+description = "Enables the new_space command without any pre-configured scope."
+commands.allow = ["new_space"]
+
+[[permission]]
+identifier = "deny-new-space"
+description = "Denies the new_space command without any pre-configured scope."
+commands.deny = ["new_space"]

@@ -1,0 +1,29 @@
+fn main() {
+    tauri_build::try_build(
+        tauri_build::Attributes::new().app_manifest(
+            tauri_build::AppManifest::new().commands(&[
+                "session_snapshot",
+                "navigate",
+                "go_back",
+                "go_forward",
+                "reload",
+                "new_tab",
+                "close_tab",
+                "select_tab",
+                "pin_tab",
+                "move_tab",
+                "set_layout",
+                "set_theme",
+                "select_space",
+                "new_space",
+                "toggle_split",
+                "set_split_ratio",
+                "focus_pane",
+                "open_palette",
+                "close_palette",
+                "probe",
+            ]),
+        ),
+    )
+    .expect("failed to run tauri build");
+}

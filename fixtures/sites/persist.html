@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Persist</title>
+    <style>
+      body {
+        margin: 32px;
+        font: 16px/1.45 "Segoe UI", sans-serif;
+        background: #f4f1ea;
+        color: #1e1b16;
+      }
+      input {
+        font: inherit;
+        padding: 8px 10px;
+        width: min(420px, 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="which"></p>
+    <p>Document start <span id="stamp"></span></p>
+    <label>Note <input id="note" autocomplete="off" /></label>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const n = params.get("n") || "?";
+      document.getElementById("which").textContent = "Fixture " + n;
+      document.getElementById("stamp").textContent = String(performance.timeOrigin);
+      document.title = "Persist " + n;
+      document.getElementById("note").addEventListener("input", (event) => {
+        const value = event.target && "value" in event.target ? event.target.value : "";
+        document.title = "Persist " + n + " " + value;
+      });
+    </script>
+  </body>
+</html>

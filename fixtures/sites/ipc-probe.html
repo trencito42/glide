@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>IPC probe</title>
+  </head>
+  <body>
+    <p>This page attempts a privileged command. It should fail.</p>
+    <script>
+      const bridge = window.__TAURI_INTERNALS__ || window.__TAURI__;
+      if (!bridge || typeof bridge.invoke !== "function") {
+        document.title = "ipc:absent";
+      } else {
+        bridge.invoke("session_snapshot").then(
+          () => {
+            document.title = "ipc:allowed";
+          },
+          (error) => {
+            const message = error && error.message ? error.message : String(error);
+            document.title = "ipc:blocked " + message;
+          },
+        );
+      }
+    </script>
+  </body>
+</html>

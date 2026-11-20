@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-select-space"
+description = "Enables the select_space command without any pre-configured scope."
+commands.allow = ["select_space"]
+
+[[permission]]
+identifier = "deny-select-space"
+description = "Denies the select_space command without any pre-configured scope."
+commands.deny = ["select_space"]
